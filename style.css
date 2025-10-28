@@ -1,13 +1,13 @@
 :root {
   --primary: #ffcb05;
   --secondary: #3b4cca;
-  --bg: #f7f7f7;
-  --text: #333;
+  --bg: #f6f8fc;
+  --text: #222;
 }
 
 * {
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -41,7 +41,6 @@ header {
   max-width: 80%;
   border-radius: 8px;
   border: 2px solid var(--secondary);
-  font-size: 1rem;
 }
 
 .search-box button {
@@ -50,9 +49,8 @@ header {
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .search-box button:hover {
@@ -61,9 +59,8 @@ header {
 
 .feedback {
   text-align: center;
-  margin-top: 1rem;
-  font-size: 1rem;
   color: #666;
+  margin-bottom: 1rem;
 }
 
 .cards {
@@ -76,9 +73,10 @@ header {
 .card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 1rem;
+  cursor: pointer;
   transition: transform 0.2s;
 }
 
@@ -89,34 +87,6 @@ header {
 .card img {
   width: 100%;
   border-radius: 8px;
-  background: #f0f0f0;
-}
-
-.gifs-section {
-  background: #fff;
-  padding: 1rem;
-  text-align: center;
-  border-top: 3px solid var(--secondary);
-}
-
-.gifs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 1rem;
-}
-
-.gifs img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.gifs img:hover {
-  transform: scale(1.1);
 }
 
 .sets-section {
@@ -149,3 +119,47 @@ footer {
   padding: 1rem;
   margin-top: auto;
 }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close:hover {
+  color: var(--secondary);
+}
+
