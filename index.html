@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pokémon TCG Explorer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pokémon TCG + Giphy Explorer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Pokémon TCG + Giphy Explorer</h1>
-    <p>Busque cartas, veja GIFs e descubra curiosidades!</p>
+    <p>Integração: Pokémon TCG API + GIPHY — rápido e responsivo</p>
   </header>
 
   <main>
     <section class="search-box">
-      <input type="text" id="searchInput" placeholder="Digite o nome de um Pokémon (ex: Charizard)" />
+      <input id="searchInput" type="text" placeholder="Digite o nome de um Pokémon (ex: Pikachu)" />
       <button id="searchBtn">Buscar</button>
     </section>
 
     <p id="feedback" class="feedback"></p>
+
+    <section class="gifs-section">
+      <h2>GIFs</h2>
+      <div id="gifs" class="gifs"></div>
+    </section>
 
     <section id="cards" class="cards"></section>
 
@@ -28,16 +33,16 @@
     </section>
   </main>
 
-  <!-- Modal de detalhes -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <div id="modalBody"></div>
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button id="closeModal" class="close" aria-label="Fechar">×</button>
+      <div id="modalBody" class="modal-body"></div>
     </div>
   </div>
 
   <footer>
-    <p>© 2025 — Projeto Acadêmico - Edaurdo Siqueira | APIs Pokémon TCG + Giphy</p>
+    <p>© 2025 — APIs: Pokémon TCG + GIPHY</p>
   </footer>
 
   <script src="script.js"></script>
