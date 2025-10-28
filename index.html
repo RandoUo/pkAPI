@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pokémon TCG + Giphy Explorer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokeDex + Gifs</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Pokémon TCG + Giphy Explorer</h1>
-    <p>Integração: Pokémon TCG API + GIPHY — rápido e responsivo</p>
+    <h1>PokéDex Interativa</h1>
+    <p>Busque cartas e GIFs dos seus Pokémon favoritos!</p>
   </header>
 
   <main>
-    <section class="search-box">
-      <input id="searchInput" type="text" placeholder="Digite o nome de um Pokémon (ex: Pikachu)" />
-      <button id="searchBtn">Buscar</button>
+    <section class="search-section">
+      <div class="search-box">
+        <h2>Buscar Cartas</h2>
+        <input id="searchCardsInput" type="text" placeholder="Ex: Pikachu" />
+        <button id="searchCardsBtn">🔍 Pesquisar</button>
+      </div>
+
+      <div class="search-box">
+        <h2>Buscar GIFs</h2>
+        <input id="searchGifsInput" type="text" placeholder="Ex: Charizard" />
+        <button id="searchGifsBtn">🎞️ Pesquisar</button>
+      </div>
     </section>
 
-    <p id="feedback" class="feedback"></p>
-
-    <section class="gifs-section">
-      <h2>GIFs</h2>
-      <div id="gifs" class="gifs"></div>
+    <section id="sets">
+      <h2>Principais Coleções</h2>
+      <ul id="setList"><li>Carregando coleções...</li></ul>
     </section>
 
-    <section id="cards" class="cards"></section>
+    <section id="cards">
+      <h2>Cartas Encontradas</h2>
+      <div id="cardsContainer" class="grid"></div>
+    </section>
 
-    <section class="sets-section">
-      <h2>Coleções (Sets)</h2>
-      <ul id="setList" class="sets"></ul>
+    <section id="gifs">
+      <h2>GIFs Pokémon</h2>
+      <div id="gifsContainer" class="grid"></div>
     </section>
   </main>
 
-  <!-- Modal -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true">
-      <button id="closeModal" class="close" aria-label="Fechar">×</button>
-      <div id="modalBody" class="modal-body"></div>
-    </div>
-  </div>
-
   <footer>
-    <p>© 2025 — APIs: Pokémon TCG + GIPHY</p>
+    <p>Feito usando Pokémon TCG API + Giphy API</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
